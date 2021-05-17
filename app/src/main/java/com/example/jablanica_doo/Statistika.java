@@ -28,10 +28,10 @@ public class Statistika {
         seznam[2] = delavec3;
         for (int i = 0; i < seznam.length; i++) {
             if(String.valueOf(seznam[i].id).equals(delavecID)){
-                return " \r\nPovprečno število ur na dan: " + String.valueOf(seznam[i].povprecnoSteviloUrDan) +
-                        " \r\nPovprečno število ur na mesec: " + String.valueOf(seznam[i].povprecnoSteviloUrMesec) +
-                        " \r\nPovprečno število ur na leto: " + String.valueOf(seznam[i].povprecnoSteviloUrLeto) +
-                        " \r\nŠtevilo delovnih dni: " + String.valueOf(seznam[i].steviloDelovnihDni);
+                return " \r\n Povprečno število ur na dan: " + String.valueOf(seznam[i].povprecnoSteviloUrDan) +
+                        " \r\n Povprečno število ur na mesec: " + String.valueOf(seznam[i].povprecnoSteviloUrMesec) +
+                        " \r\n Povprečno število ur na leto: " + String.valueOf(seznam[i].povprecnoSteviloUrLeto) +
+                        " \r\n Število delovnih dni: " + String.valueOf(seznam[i].steviloDelovnihDni);
             }
         }
         return "";

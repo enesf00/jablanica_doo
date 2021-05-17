@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 String delavecID;
 
                 if(parent.getItemAtPosition(position).equals("Izberi delavca")){
-                    //
+                    besedilo.setText("");
                 }
                 else{
                     delavecID = parent.getItemAtPosition(position).toString();
