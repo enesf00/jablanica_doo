@@ -19,16 +19,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         Button button = findViewById(R.id.button);
 
-
         button.setOnClickListener(v -> prikaziSeznamDelavcev());
-
-
-
-
 
     }
 
@@ -121,18 +114,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    /** @pdGenerated default parent getter */
+
     public KPregledDelavca getKPregledDelavca() {
         return kPregledDelavca;
     }
 
-    /** @pdGenerated default parent setter
-     * @param newKPregledDelavca */
+
    public void setKPregledDelavca(KPregledDelavca newKPregledDelavca) {
         this.kPregledDelavca = newKPregledDelavca;
     }
-
-
-
 
 }
