@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,28 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
         button.setOnClickListener(v -> prikaziSeznamDelavcev());
 
-       /*
 
-        final String[] delavec = new String[1];
 
-        dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                delavec[0] = (String) parent.getItemAtPosition(position);
-                if(parent.getItemAtPosition(position).equals("Izberi delavca")){
-                    //
-                }
-                else{
-                    dropdown.setVisibility(View.INVISIBLE);
-                }
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-        */
 
     }
 
@@ -56,23 +38,51 @@ public class MainActivity extends AppCompatActivity {
             Spinner dropdown = findViewById(R.id.spinner);
             dropdown.setVisibility(View.VISIBLE);
             String[][] seznam = KPregledDelavca.vrniSeznamDelavcev();
-            String[] seznam1 = new String[3];
-            for (int i = 0; i < 3; i++) {
-                seznam1[i] = seznam[0][i] + " " + seznam[1][i];
+            String[] seznam1 = new String[4];
+            for (int i = 0; i < 4; i++) {
+                if (i == 0){
+                    seznam1[i] = "Izberi delavca";
+                }
+                else {
+                seznam1[i] = seznam[0][i-1] + " " + seznam[1][i-1] + " " + seznam[2][i-1];
+                }
             }
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, seznam1);
             dropdown.setAdapter(adapter);
 
+            izberiDelavca();
     }
 
     public int izberiDelavca() {
-        // TODO: implement
+        Spinner dropdown = findViewById(R.id.spinner);
+        TextView besedilo = (TextView)findViewById(R.id.textView);
+
+
+        dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String delavecID;
+
+                if(parent.getItemAtPosition(position).equals("Izberi delavca")){
+                    //
+                }
+                else{
+                    delavecID = parent.getItemAtPosition(position).toString();
+                    delavecID = String.valueOf(delavecID.charAt(0));
+                    besedilo.setText(KPregledDelavca.izberiDelavca(delavecID));
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         return 0;
     }
 
-    public int prikaziPodrobnePodatke() {
-        // TODO: implement
-        return 0;
+    public static String prikaziPodrobnePodatke(String podatki) {
+        return podatki;
     }
 
     public int prikaziNapako() {

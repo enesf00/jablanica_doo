@@ -1,24 +1,42 @@
 package com.example.jablanica_doo;
 
+import android.text.method.DialerKeyListener;
+
 public class Dokumenti {
-    /** @pdOid 682a6cc0-1a78-4f34-a717-12655c3f7471 */
     private int id;
-    /** @pdOid 0895e5e1-befb-4c91-90e1-ba667a4d927c */
     private int veljavnostPogodbe;
-    /** @pdOid e0a5e4d2-5114-4645-a159-d54eb312f446 */
     private int veljavnostVarstvoPriDelu;
-    /** @pdOid 78c3e18b-6df8-4ef7-86b6-e8c3a1bcdd41 */
     private int veljavnostZdravniskoSpricevalo;
 
-    /** @pdOid f24b978d-970c-4dfa-bf2e-39619966e397 */
-    public int vrniVeljavnostDokumentov() {
-        // TODO: implement
-        return 0;
+    public static Dokumenti delavec1 = new Dokumenti(1, 2, 2, 4);
+    public static Dokumenti delavec2 = new Dokumenti(2, 1, 4, 5);
+    public static Dokumenti delavec3 = new Dokumenti(3, 3, 3, 1);
+
+    public Dokumenti(int id, int veljavnostPogodbe, int veljavnostVarstvoPriDelu, int veljavnostZdravniskoSpricevalo) {
+        this.id=id;
+        this.veljavnostPogodbe=veljavnostPogodbe;
+        this.veljavnostVarstvoPriDelu=veljavnostVarstvoPriDelu;
+        this.veljavnostZdravniskoSpricevalo=veljavnostZdravniskoSpricevalo;
     }
 
-    /** @pdOid 1edc9341-fb8c-4cd8-9984-bb8edaac9286 */
-    public int preveriVeljavnostDokumentov() {
-        // TODO: implement
-        return 0;
+    public static String vrniVeljavnostDokumentov(String delavecID) {
+        Dokumenti[] seznam = new Dokumenti[3];
+        seznam[0] = delavec1;
+        seznam[1] = delavec2;
+        seznam[2] = delavec3;
+        for (int i = 0; i < seznam.length; i++) {
+            if(String.valueOf(seznam[i].id).equals(delavecID)){
+                return "\r\n Veljavnost pogodbe: " + String.valueOf(seznam[i].veljavnostPogodbe) +
+                        " let \r\n Veljavnost varstva pri delu: " + String.valueOf(seznam[i].veljavnostVarstvoPriDelu) +
+                        " let \r\n Veljavnost zdravniškega spričevala: " + String.valueOf(seznam[i].veljavnostZdravniskoSpricevalo) + " let" +
+                        Statistika.vrniStatistiko(delavecID);
+            }
+        }
+        return "";
+
+    }
+
+    public static void preveriVeljavnostDokumentov() {
+
     }
 }

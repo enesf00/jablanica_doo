@@ -12,15 +12,13 @@ public class KPregledDelavca {
     }
 
     /** @pdOid a994b884-fe9b-4e6c-80a2-a8c3e78f4b74 */
-    public int izberiDelavca() {
-        // TODO: implement
-        return 0;
+    public static String izberiDelavca(String delavecID) {
+        return (Delavci.izberiDelavca(delavecID));
     }
 
     /** @pdOid 9ef59a15-ca94-419a-b1b1-0fa080f09a90 */
-    public int vrniPodrobnePodatke() {
-        // TODO: implement
-        return 0;
+    public static void vrniPodrobnePodatke(String podatki) {
+        //return MainActivity.prikaziPodrobnePodatke(podatki);
     }
 
     /** @pdOid 569cd5e7-a452-4af3-8d25-d98b93b6563c */

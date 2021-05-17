@@ -32,6 +32,11 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="277dp" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="635dp"
+            android:text="TextView" />
 
 
     </LinearLayout>
