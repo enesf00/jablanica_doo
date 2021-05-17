@@ -21,18 +21,23 @@ public class Delavci {
         }
 
 
-        public static String[][] vrniSeznamDelavcev() {
+        public static String[][] vrniSeznamDelavcev(){
+                //V primeru da ne bi bil hard codan seznam uporabimo try catch za lovljenje napake;
                 String[][] seznam = new String[3][3];
-                seznam[0][0] = String.valueOf(delavec1.id);
-                seznam[1][0] = delavec1.ime;
-                seznam[2][0] = delavec1.priimek;
-                seznam[0][1] = String.valueOf(delavec2.id);
-                seznam[1][1] = delavec2.ime;
-                seznam[2][1] = delavec2.priimek;
-                seznam[0][2] = String.valueOf(delavec3.id);
-                seznam[1][2] = delavec3.ime;
-                seznam[2][2] = delavec3.priimek;
-
+                try {
+                        seznam[0][0] = String.valueOf(delavec1.id);
+                        seznam[1][0] = delavec1.ime;
+                        seznam[2][0] = delavec1.priimek;
+                        seznam[0][1] = String.valueOf(delavec2.id);
+                        seznam[1][1] = delavec2.ime;
+                        seznam[2][1] = delavec2.priimek;
+                        seznam[0][2] = String.valueOf(delavec3.id);
+                        seznam[1][2] = delavec3.ime;
+                        seznam[2][2] = delavec3.priimek;
+                }catch (Exception e){
+                        vrniNapako("Prazen seznam");
+                        return null;
+                }
                 return seznam;
         }
 
@@ -60,9 +65,9 @@ public class Delavci {
                 return "";
         }
 
-        public int vrniNapako() {
-            // TODO: implement
-            return 0;
+        public static void vrniNapako(String s) {
+                //vrnemo lahko različne tipe napak
+            KPregledDelavca.vrniNapako(s);
         }
 
         public int dodajRojstniDan() {

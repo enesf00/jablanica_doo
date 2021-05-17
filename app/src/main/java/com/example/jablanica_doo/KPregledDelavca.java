@@ -1,5 +1,7 @@
 package com.example.jablanica_doo;
 
+import android.content.Context;
+
 public class KPregledDelavca {
 
     public java.util.Collection delavci;
@@ -18,9 +20,12 @@ public class KPregledDelavca {
 
     }
 
-    public int vrniNapako() {
+    public static void vrniNapako(String s) {
         // TODO: implement
-        return 0;
+        if (s.equals("Prazen seznam"))
+        MainActivity.prikaziNapako ("Prazen seznam" );
+        else
+            MainActivity.prikaziNapako ("Druge napake...");
     }
 
     public int vrniLjubilej() {

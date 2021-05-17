@@ -2,6 +2,10 @@ package com.example.jablanica_doo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public KPregledDelavca kPregledDelavca;
-
     public void prikaziSeznamDelavcev() {
             Spinner dropdown = findViewById(R.id.spinner);
             dropdown.setVisibility(View.VISIBLE);
@@ -78,10 +82,23 @@ public class MainActivity extends AppCompatActivity {
         return podatki;
     }
 
-    public int prikaziNapako() {
-        // TODO: implement
-        return 0;
+    public static void prikaziNapako(String s) {
+        System.out.println(s);
+        if(s.equals("Prazen seznam"))
+        new MainActivity().nap();
+        //else drug toast
+
     }
+
+    public void nap(){
+        Context context = getApplicationContext();
+        CharSequence text = "Prazen seznam!";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }
+
 
     public int prikaziVeljavnostDokumentov() {
         // TODO: implement
