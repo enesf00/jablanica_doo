@@ -7,9 +7,8 @@ public class KPregledDelavca {
     public Statistika statistika;
 
     /** @pdOid 83b76758-136e-4c79-ace4-8a771636ac80 */
-    public int vrniSeznamDelavcev() {
-        // TODO: implement
-        return 0;
+    public static String[][] vrniSeznamDelavcev() {
+        return Delavci.vrniSeznamDelavcev();
     }
 
     /** @pdOid a994b884-fe9b-4e6c-80a2-a8c3e78f4b74 */
