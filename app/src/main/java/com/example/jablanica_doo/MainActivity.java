@@ -25,8 +25,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button button = findViewById(R.id.button);
+        Button button2 = findViewById(R.id.button2);
+        Spinner dropdown = findViewById(R.id.spinner);
 
         button.setOnClickListener(v -> prikaziSeznamDelavcev());
+        button2.setOnClickListener(v ->{ prikaziRojstniDan(); dropdown.setVisibility(View.INVISIBLE);});
 
     }
 
@@ -110,9 +113,10 @@ public class MainActivity extends AppCompatActivity {
         return 0;
     }
 
-    public int prikaziRojstniDan() {
-        // TODO: implement
-        return 0;
+    public void prikaziRojstniDan() {
+        TextView besedilo = (TextView)findViewById(R.id.textView);
+
+        besedilo.setText(KPregledDelavca.vrniRojstniDan());
     }
 
     public int prikaziLjubilej() {

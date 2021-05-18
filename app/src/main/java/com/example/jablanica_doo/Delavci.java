@@ -85,8 +85,17 @@ public class Delavci {
             return 0;
         }
 
-        public int vrniRojstniDan() {
-            // TODO: implement
-            return 0;
+        public static String vrniRojstniDan() {
+                Delavci[] seznam = new Delavci[3];
+                seznam[0] = delavec1;
+                seznam[1] = delavec2;
+                seznam[2] = delavec3;
+                String s = "";
+                for (int i = 0; i < seznam.length; i++) {
+                        s+= (i+1)+". " + String.valueOf(seznam[i].ime) +
+                                " " + String.valueOf(seznam[i].priimek) +
+                                " " +String.valueOf(seznam[i].rojstniDan)+"\r\n";
+                }
+                return s;
         }
 }

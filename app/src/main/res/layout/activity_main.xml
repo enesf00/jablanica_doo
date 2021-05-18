@@ -20,6 +20,14 @@
             tools:ignore="MissingConstraints"
             android:layout_gravity="center_vertical|center_horizontal|center"
             android:gravity="center_vertical|center_horizontal" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pokaži rojstne dneve"
+            tools:ignore="MissingConstraints"
+            android:layout_gravity="center_vertical|center_horizontal|center"
+            android:gravity="center_vertical|center_horizontal" />
 
         <Spinner
             android:id="@+id/spinner"

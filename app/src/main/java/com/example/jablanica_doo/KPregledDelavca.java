@@ -33,9 +33,8 @@ public class KPregledDelavca {
         return 0;
     }
 
-    public int vrniRojstniDan() {
-        // TODO: implement
-        return 0;
+    public static String vrniRojstniDan() {
+        return Delavci.vrniRojstniDan();
     }
 
     public int dodajLjubilej() {
